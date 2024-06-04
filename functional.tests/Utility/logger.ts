@@ -1,8 +1,8 @@
 import { default as Reporter } from "@wdio/allure-reporter";
 
-class Log {
-  public info(message: string) {
+class Logger {
+  public info(message: any) {
     Reporter.addStep(message);
   }
 }
-export default new Log();
+export default new Logger();
