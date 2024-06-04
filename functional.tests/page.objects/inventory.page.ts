@@ -1,7 +1,6 @@
 import { $$ } from "@wdio/globals";
-import  BasePage  from "./base.page.js";
-export class InventoryPage extends BasePage{
-    
+import BasePage from "./base.page.js";
+export class InventoryPage extends BasePage {
   protected get allInventoryItems() {
     return $$('[data-test="inventory-item"]');
   }
@@ -37,7 +36,7 @@ export class InventoryPage extends BasePage{
     await this.inventoryAddToCartBtn(index).click();
   }
   public async isInventoryDisplayed(): Promise<boolean> {
-    return await this.allInventoryItems.length>0;
+    return (await this.allInventoryItems.length) > 0;
   }
   public async getInventoryCount(): Promise<number> {
     return await this.allInventoryItems.length;

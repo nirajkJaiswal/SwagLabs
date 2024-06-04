@@ -1,6 +1,6 @@
 import { $$ } from "@wdio/globals";
-import  BasePage  from "./base.page.js";
-export class CartPage extends BasePage{
+import BasePage from "./base.page.js";
+export class CartPage extends BasePage {
   protected get allInventoryItems() {
     return $$('[data-test="inventory-item"]');
   }
@@ -16,10 +16,10 @@ export class CartPage extends BasePage{
     );
   }
   protected get checkoutBtn() {
-    return $('#checkout');
+    return $("#checkout");
   }
   protected get continueShoppingBtn() {
-    return $('#continue-shopping');
+    return $("#continue-shopping");
   }
   protected removeItemBtn(index: number) {
     return this.allInventoryItems[index].$("[id*=remove-sauce-]");
@@ -42,22 +42,19 @@ export class CartPage extends BasePage{
     await this.removeItemBtn(index).click();
   }
   public async isInventoryItemsDisplayed(): Promise<boolean> {
-    return await this.allInventoryItems.length>0;
+    return (await this.allInventoryItems.length) > 0;
   }
-  public async checkout()
-  {
+  public async checkout() {
     (await this.checkoutBtn).scrollIntoView();
     (await this.checkoutBtn).waitForClickable();
     (await this.checkoutBtn).click();
   }
-  public async continueShopping()
-  {
+  public async continueShopping() {
     (await this.continueShoppingBtn).scrollIntoView();
     (await this.continueShoppingBtn).waitForClickable();
     (await this.continueShoppingBtn).click();
   }
-  public async getInventoryItemsCount(): Promise<number>
-  {
+  public async getInventoryItemsCount(): Promise<number> {
     return await this.allInventoryItems.length;
   }
 }

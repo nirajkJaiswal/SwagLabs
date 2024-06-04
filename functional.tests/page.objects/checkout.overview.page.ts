@@ -27,10 +27,9 @@ export class CheckoutOverviewPage extends BasePage {
   public async getInventoryPrice(index: number) {
     return await this.inventoryPrice(index).getText();
   }
-  public async confirm()
-  {
-     (await this.finishBtn).scrollIntoView();
-     (await this.finishBtn).click();
+  public async confirm() {
+    (await this.finishBtn).scrollIntoView();
+    (await this.finishBtn).click();
   }
 }
 export default new CheckoutOverviewPage();

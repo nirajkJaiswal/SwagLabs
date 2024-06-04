@@ -1,4 +1,4 @@
-import {$ } from "@wdio/globals";
+import { $ } from "@wdio/globals";
 export class LoginPage {
   public get inputUsername() {
     return $("#user-name");

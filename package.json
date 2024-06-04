@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "test": "npx wdio run wdio.conf.ts",
-    "report":"allure generate allure-results --clean -o allure-report &&  allure open allure-report"
+    "report": "allure generate allure-results --clean -o allure-report &&  allure open allure-report"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^8.38.2",
