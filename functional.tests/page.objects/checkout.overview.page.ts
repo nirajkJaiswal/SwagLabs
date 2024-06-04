@@ -1,6 +1,6 @@
 import { $$ } from "@wdio/globals";
 import BasePage from "./base.page.js";
-class CheckoutOverviewPage extends BasePage {
+export class CheckoutOverviewPage extends BasePage {
   protected get allInventoryItems() {
     return $$('[data-test="inventory-item"]');
   }

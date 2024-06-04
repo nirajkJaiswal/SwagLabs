@@ -1,6 +1,6 @@
 import { $$ } from "@wdio/globals";
 import  BasePage  from "./base.page.js";
-class CartPage extends BasePage{
+export class CartPage extends BasePage{
   protected get allInventoryItems() {
     return $$('[data-test="inventory-item"]');
   }
@@ -55,6 +55,10 @@ class CartPage extends BasePage{
     (await this.continueShoppingBtn).scrollIntoView();
     (await this.continueShoppingBtn).waitForClickable();
     (await this.continueShoppingBtn).click();
+  }
+  public async getInventoryItemsCount(): Promise<number>
+  {
+    return await this.allInventoryItems.length;
   }
 }
 export default new CartPage();

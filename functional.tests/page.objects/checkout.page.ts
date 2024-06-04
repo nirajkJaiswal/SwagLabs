@@ -1,6 +1,6 @@
 import { $$ } from "@wdio/globals";
 import  BasePage  from "./base.page.js";
-class CheckoutPage extends BasePage{
+export class CheckoutPage extends BasePage{
   protected get firstNametxt() {
     return $('#first-name');
   }
@@ -24,6 +24,10 @@ class CheckoutPage extends BasePage{
     (await this.lastNametxt).addValue(lastName);
     (await this.postalCodetxt).addValue(postalCode);
     (await this.continueBtn).click();
+  }
+  public async isUserInfoDisplayed():Promise<boolean>
+  {
+    return (await this.firstNametxt).isDisplayed() ;
   }
 
 }

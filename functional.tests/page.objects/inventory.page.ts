@@ -1,6 +1,6 @@
 import { $$ } from "@wdio/globals";
 import  BasePage  from "./base.page.js";
-class InventoryPage extends BasePage{
+export class InventoryPage extends BasePage{
     
   protected get allInventoryItems() {
     return $$('[data-test="inventory-item"]');
@@ -38,6 +38,9 @@ class InventoryPage extends BasePage{
   }
   public async isInventoryDisplayed(): Promise<boolean> {
     return await this.allInventoryItems.length>0;
+  }
+  public async getInventoryCount(): Promise<number> {
+    return await this.allInventoryItems.length;
   }
 }
 export default new InventoryPage();

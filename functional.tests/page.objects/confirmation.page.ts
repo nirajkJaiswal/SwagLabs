@@ -1,5 +1,5 @@
 import BasePage from "./base.page.js";
-class ConfirmationPage extends BasePage {
+export class ConfirmationPage extends BasePage {
   protected get confirmationSection() {
     return $("#checkout_complete_container");
   }

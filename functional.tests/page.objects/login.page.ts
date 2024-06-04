@@ -1,5 +1,5 @@
 import {$ } from "@wdio/globals";
-class LoginPage {
+export class LoginPage {
   public get inputUsername() {
     return $("#user-name");
   }
